@@ -1,0 +1,58 @@
+request:
+  method: GET
+  url: /bank/lening
+  queryParameters:
+    geboortedatum: "1984-11-11"
+    inkomen: 85000
+    looptijdInMaanden: 360
+    jaarrente: 2.5
+  headers:
+    Content-Type: application/json;charset=UTF-8
+  matchers:
+    body:
+      - path: $.['geboortedatum']
+        type: by_regex
+        value: "[0-9]{4}-[0-9]{2}-[0-9]{2}"
+      - path: $.['inkomen']
+        type: by_regex
+        predefined: number
+      - path: $.['looptijdInMaanden']
+        type: by_regex
+        predefined: number
+      - path: $.['jaarrente']
+        type: by_regex
+        predefined: number
+response:
+  status: 200
+  body:
+    geboortedatum: "1984-11-11"
+    maximaalTeLenenBedrag: 340000
+    inkomen: 85000
+    annuiteit: 1500
+    teVerzekerenRisico: 65000
+    maandPremieLevensverzekering : 45
+  matchers:
+    headers:
+      - key: Content-Type
+        regex: "application/json.*"
+    body:
+      - path: $.['geboortedatum']
+        type: by_regex
+        value: "[0-9]{4}-[0-9]{2}-[0-9]{2}"
+      - path: $.['maximaalTeLenenBedrag']
+        type: by_regex
+        predefined: number
+      - path: $.['inkomen']
+        type: by_regex
+        predefined: number
+      - path: $.['annuiteit']
+        type: by_regex
+        predefined: number
+      - path: $.['teVerzekerenRisico']
+        type: by_regex
+        predefined: number
+      - path: $.['maandPremieLevensverzekering']
+        type: by_regex
+        predefined: number
+  headers:
+    Content-Type: application/json;charset=UTF-8
