@@ -6,11 +6,8 @@ spring:
 lening-service:
   host: localhost
   port: 8080
-stubrunner:
-  ids: 'nl.bank:levensverzekering-service:+:stubs:8090'
-  repositoryRoot: https://repo.spring.io/libs-snapshot
 logging:
   level:
     root: INFO
-    nl.bank.leningservice: INFO
+    nl.bank.vergelijker.vergelijkerservice: INFO
     org.springframework.web.filter.CommonsRequestLoggingFilter: DEBUG

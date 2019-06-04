@@ -25,6 +25,7 @@ public class VergelijkerService {
         return leningVergelijking;
     }
 
+
     private BankVergelijking getNumberOneBank(String volledigeNaam, Double inkomen, Date geboortedatum, Integer looptijdInMaanden, Double rentepercentage) {
 
         BankVergelijking bankVergelijking = new BankVergelijking();

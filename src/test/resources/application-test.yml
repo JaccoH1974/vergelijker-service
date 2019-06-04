@@ -1,0 +1,6 @@
+lening-service:
+  host: localhost
+  port: ${wiremock.server.port}
+#stubrunner:
+#  ids: 'nl.bank:lening-service:+:stubs:9090'
+#  repositoryRoot: https://repo.spring.io/libs-snapshot
