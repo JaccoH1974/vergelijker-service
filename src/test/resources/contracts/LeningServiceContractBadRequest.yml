@@ -1,0 +1,16 @@
+request:
+  method: GET
+  url: /bank/lening
+  queryParameters:
+    geboortedatum: "1984-11-11"
+    inkomen: 85000
+    looptijdInMaanden: 360
+  headers:
+    Content-Type: application/json;charset=UTF-8
+  matchers:
+    body:
+      - path: $.['geboortedatum']
+        type: by_regex
+        value: "[0-9]{4}-[0-9]{2}-[0-9]{2}"
+response:
+  status: 400
