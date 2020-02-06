@@ -5,7 +5,7 @@ spring:
     allow-bean-definition-overriding: true
 lening-service:
   host: localhost
-  port: 8080
+  port: 8082
 logging:
   level:
     root: INFO
